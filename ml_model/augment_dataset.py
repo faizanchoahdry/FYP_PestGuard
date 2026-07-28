@@ -13,17 +13,19 @@ Purpose:
   sirf ek exact recording "yaad" nahi karta (overfitting kam hota hai).
 
 How to use:
-  python augment_dataset.py
+  python augment_dataset.py termite
+  python augment_dataset.py rodent no_pest
+  (agar koi naam na dein, default "pest" aur "no_pest" process honge)
 """
 
 import os
-import random
+import sys
 import numpy as np
 import librosa
 import soundfile as sf
 
 DATASET_FOLDER = "dataset"
-CLASSES = ["pest", "no_pest"]
+CLASSES = sys.argv[1:] if len(sys.argv) > 1 else ["pest", "no_pest"]
 SR = 22050  # sab files isi sample rate pe standardize honge
 
 def pitch_shift(y, sr, n_steps):

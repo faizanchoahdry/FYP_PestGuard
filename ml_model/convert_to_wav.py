@@ -2,7 +2,7 @@
 convert_to_wav.py
 
 Purpose:
-  dataset/rodent folder mein agar .mp3 (ya doosre formats) files hain,
+  dataset/termite folder mein agar .mp3 (ya doosre formats) files hain,
   unhe sab .wav mein convert karta hai -- taake baaki scripts
   (extract_features.py, augment_dataset.py) ke sath consistent rahein.
 
@@ -14,7 +14,7 @@ import os
 import librosa
 import soundfile as sf
 
-FOLDER = os.path.join("dataset", "rodent")
+FOLDER = os.path.join("dataset", "termite")
 TARGET_SR = 22050
 
 def main():
